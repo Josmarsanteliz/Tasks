@@ -1,0 +1,30 @@
+.meteor-shower-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.meteor {
+  position: absolute;
+  width: 120px;
+  height: 2px;
+  /* Invertimos el degradado para que la cola quede del lado correcto al ir a la derecha */
+  background: linear-gradient(270deg, #ffffff, rgba(255, 255, 255, 0));
+  transform: rotate(45deg); /* Cambiamos el ángulo a positivo */
+  opacity: 0;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(45deg);
+  }
+  100% {
+    opacity: 0;
+    /* Se mueven en diagonal hacia abajo y hacia la derecha */
+    transform: translate(500px, 500px) rotate(45deg);
+  }
+}
